@@ -11,21 +11,24 @@ public class MyApp {
 	
 	public static void testPersonne() {
 		Personne p1=null ,p1Bis=null, p2=null;
-		p1=new Personne();
-		p1.prenom="alex"; p1.nom="Therieur" ; p1.email="alex.therieur@xyz.com";
-		p1.taille=120; p1.grandir(5);
-		p1Bis=new Personne();
-		p1Bis.prenom="alex"; p1Bis.nom="Therieur" ; p1Bis.email="alex.therieur@xyz.com";
-		p1Bis.taille=120; p1Bis.grandir(5);
+		p1=new Personne("alex","Therieur","alex.therieur@xyz.com",120);
+	    p1.grandir(5);
+		p1Bis=new Personne("alex","Therieur","alex.therieur@xyz.com",120);
+	    p1Bis.grandir(5);
 		System.out.println("p1=" + p1);//.toString() appelé implicitement
 		System.out.println("p1Bis=" + p1Bis);
 		if(p1.equals(p1Bis)) {
+			//NB: pour avoir le bon comportement, la méthode .equals() doit êtte codée
+			//sur la classe Personne (via assistant source/generate hashCode and equals
 			System.out.println("les objets p1 et p1Bis ont mêmes valeurs ");
+		}else{
+			System.out.println("les objets p1 et p1Bis n'ont mêmes valeurs ");
 		}
-		
 		p2=new Personne();
-		p2.prenom="axelle"; p2.nom="Aire" ; p2.email="axelle.Aire@xyz.com";
-		p2.taille=130; p2.grandir(6);
+		p2.setPrenom("axelle"); p2.setNom("Aire") ; p2.setEmail("axelle.Aire@xyz.com");
+		p2.setTaille(130); p2.grandir(6);
+		System.out.println("p2=" + p2);//.toString() implicite
+		p2.setTaille(-60);
 		System.out.println("p2=" + p2);//.toString() implicite
 	}
 	

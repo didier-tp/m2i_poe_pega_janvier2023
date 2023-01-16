@@ -2,19 +2,33 @@ package tp;
 
 public class Personne {
 	
-	public String prenom;
-	public String nom;
-	public String email;
-
-	public Integer taille; //null par défaut
+	private String prenom;
+	private String nom;
+	private String email;
+	private Integer taille; //null par défaut
 
 	@Override
 	public String toString() {
 		return "Personne [prenom=" + prenom + ", nom=" + nom + ", email=" + email + ", taille=" + taille + "]";
 	}
 	
+
+	public Personne(String prenom, String nom, String email, Integer taille) {
+		super();
+		this.prenom = prenom;
+		this.nom = nom;
+		this.email = email;
+		this.taille = taille;
+	}
+
 	
-	
+	public Personne() {
+		super();
+	}
+
+
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -65,5 +79,54 @@ public class Personne {
 	public void grandir(int accroissement){
 		this.taille = this.taille + accroissement;
 	}
+
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+
+	public String getNom() {
+		return nom;
+	}
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public Integer getTaille() {
+		return taille;
+	}
+
+
+	
+	public void setTaille(Integer taille) {
+		if(taille < 0) {
+			System.err.println("non mais ça va la tête, une personne ne peut pas avoir une taille négative");
+			System.err.println("this de la classe Personne refuse de changer sa taille dans ce cas de figure !");
+			return;//on arrête l'execution de la méthode avant la fin ordinaire
+		}
+		this.taille = taille;
+	}
+	
+	
+	
 
 }
