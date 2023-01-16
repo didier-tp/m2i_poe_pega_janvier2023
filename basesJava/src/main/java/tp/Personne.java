@@ -5,7 +5,7 @@ public class Personne {
 	private String prenom;
 	private String nom;
 	private String email;
-	private Integer taille; //null par défaut
+	private Integer taille; //null par défaut (0 par défaut si int plutôt que Integer)
 
 	@Override
 	public String toString() {

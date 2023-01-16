@@ -7,6 +7,18 @@ public class MyApp {
 		//testConversion();
 		testCercle();
 		testPersonne();
+		testAdresse();
+	}
+	
+	public static void testAdresse() {
+		Adresse a1 = new Adresse();
+		System.out.println("a1="+a1);
+		a1.setNum("7Bis"); a1.setRue("rue Xy"); a1.setCodePostal("75001"); a1.setVille("Paris");
+		System.out.println("a1="+a1);
+		
+		Adresse a2 = new Adresse("12" , "rue elle" , "76000" , "Rouen");
+		System.out.println("a2="+a2);
+		System.out.println("codePostal de Rouen="+a2.getCodePostal());
 	}
 	
 	public static void testPersonne() {
@@ -25,6 +37,7 @@ public class MyApp {
 			System.out.println("les objets p1 et p1Bis n'ont mêmes valeurs ");
 		}
 		p2=new Personne();
+		System.out.println("p2=" + p2);//.toString() implicite
 		p2.setPrenom("axelle"); p2.setNom("Aire") ; p2.setEmail("axelle.Aire@xyz.com");
 		p2.setTaille(130); p2.grandir(6);
 		System.out.println("p2=" + p2);//.toString() implicite
