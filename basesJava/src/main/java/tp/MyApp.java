@@ -5,16 +5,24 @@ public class MyApp {
 	public static void main(String[] args) {
 		//testTypeElementaire();
 		//testConversion();
-		//testCercle();
+		testCercle();
 		testPersonne();
 	}
 	
 	public static void testPersonne() {
-		Personne p1=null , p2=null;
+		Personne p1=null ,p1Bis=null, p2=null;
 		p1=new Personne();
 		p1.prenom="alex"; p1.nom="Therieur" ; p1.email="alex.therieur@xyz.com";
 		p1.taille=120; p1.grandir(5);
-		System.out.println("p1=" + p1.toString());
+		p1Bis=new Personne();
+		p1Bis.prenom="alex"; p1Bis.nom="Therieur" ; p1Bis.email="alex.therieur@xyz.com";
+		p1Bis.taille=120; p1Bis.grandir(5);
+		System.out.println("p1=" + p1);//.toString() appelé implicitement
+		System.out.println("p1Bis=" + p1Bis);
+		if(p1.equals(p1Bis)) {
+			System.out.println("les objets p1 et p1Bis ont mêmes valeurs ");
+		}
+		
 		p2=new Personne();
 		p2.prenom="axelle"; p2.nom="Aire" ; p2.email="axelle.Aire@xyz.com";
 		p2.taille=130; p2.grandir(6);
@@ -24,13 +32,16 @@ public class MyApp {
 	public static void testCercle() {
 		Cercle c1=null, c2=null;
 		c1 = new Cercle();
-		c1.rayon = 100; c1.xc = 50; c1.yc = 50;
+		//c1.rayon = 100; c1.xc = 50; c1.yc = 50; //V1 avec xc,yc,rayon public
+		c1.setRayon(100); c1.setXc(50); c1.setYc(50);
+		c1.setRayon(-70); //on demande au cercle c1 de modifier son rayon à -70
+		                  //mais l'objet c1 refuse la valeur invalide dans .setRayon()
 		System.out.println("valeurs du c1=" + c1.toString());
 		System.out.println("perimetre de c1="+ c1.perimetre());
-		c2 = new Cercle();
-		c2.rayon = 200; c2.xc = 60; c2.yc = 60;
+		c2 = new Cercle(60,60,200);
 		c2.zoomer(2);
-		System.out.println("rayon de c2="+ c2.rayon);
+		//System.out.println("rayon de c2="+ c2.rayon);//V1 avec rayon public
+		System.out.println("rayon de c2="+ c2.getRayon()); //V2 avec rayon private
 		//System.out.println("valeurs du c2=" + c2.toString());
 		System.out.println("valeurs du c2=" + c2); //avec appel implicite de .toString()
 	}
