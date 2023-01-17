@@ -5,11 +5,25 @@ public class MyApp {
 	public static void main(String[] args) {
 		//testTypeElementaire();
 		//testConversion();
-		testCercle();
-		testPersonne();
+		//testCercle();
+		//testPersonne();
+		testEmploye();
 		//testAdresse();
 		//testString();
-		testTableau();
+		//testTableau();
+	}
+	
+	public static void testEmploye() {
+		Employe e1=null;
+		e1=new Employe();
+		e1.setPrenom("jean");e1.setNom("Bon"); //appels des méthodes héritées
+		e1.setTaille(160); e1.setEmail("jean.Bon@iciOuLa.fr");
+		e1.setSalaire(2500.0); //appel d'une méthode spécifique aux employés
+		e1.setMotDePasse("motDePasse"); e1.setNumeroEmploye(1);
+		System.out.println("e1="+e1.toString()); //appel d'une méthode redéfinie sur classe Employe
+		
+		Employe e2=new Employe("jean","Aimare","jean.Aimare@DeTravailler.com",170,2,"passPass",2000.0);
+		System.out.println("e2="+e2.toString());
 	}
 	
 	public static final int TAILLE_TAB = 6;
