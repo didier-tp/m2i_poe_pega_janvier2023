@@ -7,10 +7,20 @@ public class MyApp {
 		//testConversion();
 		//testCercle();
 		//testPersonne();
-		testEmploye();
+		//testEmploye();
 		//testAdresse();
 		//testString();
 		//testTableau();
+		testObjetVolant();
+	}
+	
+	public static void testObjetVolant() {
+		ObjetVolantAbstrait objVolant = null;
+		//objVolant = new ObjetVolantAbstrait();//new direct interdit sur classe abstraite
+		objVolant = new Avion();
+		System.out.println("avion qui décolle : " + objVolant.decoller());
+		objVolant = new Helicoptere();
+		System.out.println("hélicoptere qui décolle : " + objVolant.decoller());
 	}
 	
 	public static void testEmploye() {
@@ -29,11 +39,13 @@ public class MyApp {
 		refPersonneQuelconque = new Personne("prenom" , "nom" , "nom.prenom@xy.com" , 160);
 		refPersonneQuelconque.grandir(5);
 		System.out.println(refPersonneQuelconque.toString());
+		System.out.println("autorisations=" + refPersonneQuelconque.getAutorisations());
 		refPersonneQuelconque = new Employe("jean","QuiRit","jean.QuiRit@xy.com",170,3,"passPass",2600.0);
 		if(refPersonneQuelconque instanceof Employe) {
 			( (Employe)refPersonneQuelconque).setSalaire(2700.0);
 		}
 		System.out.println(refPersonneQuelconque.toString());
+		System.out.println("autorisations=" + refPersonneQuelconque.getAutorisations());
 		/*
 		//POSSIBLE MAIS DECONSEILLE (LE POLYMORPHISME c'est MIEUX ):
 		if(refPersonneQuelconque instanceof Employe) {

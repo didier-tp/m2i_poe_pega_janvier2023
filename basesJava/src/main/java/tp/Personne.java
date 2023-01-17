@@ -9,6 +9,12 @@ public class Personne /* extends Object */ {
 	private String email;
 	private Integer taille; //null par défaut (0 par défaut si int plutôt que Integer)
     private Adresse adresse ; /* = new Adresse(); */
+    
+    //A coder différemment sur la classe Employe qui hérite de Personne
+    //redéfinition/override à faire
+    public String getAutorisations() {
+    	return "EmprunterDesLivres,ConsulterCatalogue";
+    }
 	
 	
 	@Override

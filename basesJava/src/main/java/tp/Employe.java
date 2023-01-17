@@ -22,19 +22,30 @@ public class Employe extends Personne{
 				+ ", partie heritee de Personne=" + super.toString() + "]";
 	}
     
+  
     
     
     //constructeurs : 1 avec zéro paramétre
     //et d'autres (ex: Employe(String prenom, String nom, String email, Integer taille,
     //                         Integer numeroEmploye ,String motDePasse, Double salaire  )
     
-    
+
+	
+
 
 	//+get/set
     public Integer getNumeroEmploye() {
 		return numeroEmploye;
 	}
 	
+
+	@Override
+	public String getAutorisations() {
+		return "GererEmprunt, ..."; 
+	}
+
+
+
 
 	public Employe() {
 		super();
