@@ -24,7 +24,26 @@ public class MyApp {
 		
 		Employe e2=new Employe("jean","Aimare","jean.Aimare@DeTravailler.com",170,2,"passPass",2000.0);
 		System.out.println("e2="+e2.toString());
-	}
+		
+		Personne refPersonneQuelconque=null; 
+		refPersonneQuelconque = new Personne("prenom" , "nom" , "nom.prenom@xy.com" , 160);
+		refPersonneQuelconque.grandir(5);
+		System.out.println(refPersonneQuelconque.toString());
+		refPersonneQuelconque = new Employe("jean","QuiRit","jean.QuiRit@xy.com",170,3,"passPass",2600.0);
+		if(refPersonneQuelconque instanceof Employe) {
+			( (Employe)refPersonneQuelconque).setSalaire(2700.0);
+		}
+		System.out.println(refPersonneQuelconque.toString());
+		/*
+		//POSSIBLE MAIS DECONSEILLE (LE POLYMORPHISME c'est MIEUX ):
+		if(refPersonneQuelconque instanceof Employe) {
+			//alors on affiche une par une les partie de Employe
+		}else 
+			if(refPersonneQuelconque instanceof Personne) {
+				//alors on affiche une par une les partie de Personne
+			}
+		*/
+	} 
 	
 	public static final int TAILLE_TAB = 6;
 	

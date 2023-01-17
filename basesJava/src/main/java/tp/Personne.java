@@ -1,6 +1,6 @@
 package tp;
 
-public class Personne {
+public class Personne /* extends Object */ {
 	
 	private static double esperanceVie = 83.0;
 	private static int ageMajorite = 18;
