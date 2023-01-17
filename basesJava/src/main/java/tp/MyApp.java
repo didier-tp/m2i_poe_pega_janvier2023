@@ -5,10 +5,32 @@ public class MyApp {
 	public static void main(String[] args) {
 		//testTypeElementaire();
 		//testConversion();
-		testCercle();
-		testPersonne();
-		testAdresse();
+		//testCercle();
+		//testPersonne();
+		//testAdresse();
+		testString();
 	}
+	
+	public static void testString() {
+		String s1 = "2023-01-17";
+		//String sMois = s1.split("-")[1];
+		String sMois = s1.substring(5,7);
+		System.out.println("sMois="+sMois);
+		
+		String s2="CBA";
+		int n = s2.length();
+		StringBuilder buffer = new StringBuilder();
+		/*for(int i=0;i<s2.length();i++){
+			buffer.append(s2.charAt(n-i-1));
+			}*/
+		for(int i=s2.length()-1;i>=0;i--){
+		   buffer.append(s2.charAt(i));
+		}
+		String s2Inverse=buffer.toString();
+		
+		System.out.println("s2Inverse="+s2Inverse);
+	}
+	
 	
 	public static void testAdresse() {
 		Adresse a1 = new Adresse();
@@ -43,6 +65,11 @@ public class MyApp {
 		System.out.println("p2=" + p2);//.toString() implicite
 		p2.setTaille(-60);
 		System.out.println("p2=" + p2);//.toString() implicite
+		
+		p2.setAdresse(new Adresse("3bis" , "rue xy" , "75001" , "Paris"));
+		p2.getAdresse().setCodePostal("75002");
+		System.out.println("adresse de p2=" + p2.getAdresse());
+		
 	}
 	
 	public static void testCercle() {

@@ -6,7 +6,9 @@ public class Personne {
 	private String nom;
 	private String email;
 	private Integer taille; //null par défaut (0 par défaut si int plutôt que Integer)
-
+    private Adresse adresse ; /* = new Adresse(); */
+	
+	
 	@Override
 	public String toString() {
 		return "Personne [prenom=" + prenom + ", nom=" + nom + ", email=" + email + ", taille=" + taille + "]";
@@ -20,8 +22,19 @@ public class Personne {
 		this.email = email;
 		this.taille = taille;
 	}
+	
 
 	
+	public Personne(String prenom, String nom, String email, Integer taille, Adresse adresse) {
+		super();
+		this.prenom = prenom;
+		this.nom = nom;
+		this.email = email;
+		this.taille = taille;
+		this.adresse = adresse;
+	}
+
+
 	public Personne() {
 		super();
 	}
@@ -124,6 +137,16 @@ public class Personne {
 			return;//on arrête l'execution de la méthode avant la fin ordinaire
 		}
 		this.taille = taille;
+	}
+
+
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
 	}
 	
 	
