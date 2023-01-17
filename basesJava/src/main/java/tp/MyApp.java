@@ -8,7 +8,30 @@ public class MyApp {
 		//testCercle();
 		//testPersonne();
 		//testAdresse();
-		testString();
+		//testString();
+		testTableau();
+	}
+	
+	public static void testTableau() {
+		 //tab doit être un tableau de 6 cases de type double
+		double[] tab = { 2.0 , 7 , 9 , 3 , 6 , 1 };
+		 /*
+		 double[] tab = null;
+		 tab = new double[6];
+		 tab[0]=2.0;
+		 tab[1]=7;
+		 tab[2]=9;
+		 tab[3]=3;
+		 tab[4]=6;
+		 tab[5]=1;
+		 */
+		 //calculer et afficher la moyenne
+		 double somme = 0;
+		 for(int i=0;i<tab.length;i++) {
+			 somme += tab[i]; //somme = somme + tab[i];
+		 }
+		 double moyenne  = somme / tab.length;
+		 System.out.println("moyenne=" + moyenne);
 	}
 	
 	public static void testString() {
