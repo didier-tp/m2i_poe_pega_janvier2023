@@ -2,6 +2,8 @@ package tp;
 
 public class Personne {
 	
+	private static double esperanceVie = 83.0;
+	private static int ageMajorite = 18;
 	private String prenom;
 	private String nom;
 	private String email;
@@ -147,6 +149,26 @@ public class Personne {
 
 	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
+	}
+
+
+	public static double getEsperanceVie() {
+		return esperanceVie;
+	}
+
+
+	public static void setEsperanceVie(double esperanceVie) {
+		Personne.esperanceVie = esperanceVie;
+	}
+
+
+	public static int getAgeMajorite() {
+		return ageMajorite;
+	}
+
+
+	public static void setAgeMajorite(int ageMajorite) {
+		Personne.ageMajorite = ageMajorite;
 	}
 	
 	

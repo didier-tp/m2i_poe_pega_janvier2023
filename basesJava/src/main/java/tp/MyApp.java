@@ -6,10 +6,10 @@ public class MyApp {
 		//testTypeElementaire();
 		//testConversion();
 		//testCercle();
-		//testPersonne();
+		testPersonne();
 		//testAdresse();
 		//testString();
-		testTableau();
+		//testTableau();
 	}
 	
 	public static void testTableau() {
@@ -93,6 +93,13 @@ public class MyApp {
 		p2.getAdresse().setCodePostal("75002");
 		System.out.println("adresse de p2=" + p2.getAdresse());
 		
+		System.out.println("espérance de vie moyenne des Personnes en france=" 
+		                   + Personne.getEsperanceVie());
+		Personne.setEsperanceVie(84.2);
+		System.out.println("nouvelle espérance de vie moyenne des Personnes en france=" 
+                            + Personne.getEsperanceVie());
+		
+		System.out.println("age majorité en france=" + Personne.getAgeMajorite());
 	}
 	
 	public static void testCercle() {
