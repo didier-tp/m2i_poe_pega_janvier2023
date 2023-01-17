@@ -1,7 +1,7 @@
 package tp;
 
 public abstract class ObjetVolantAbstrait {
-	
+	public static final int DEFAULT_MAX_ALTITUDE = 1000;
 	private Integer altitude;
 	private Integer altitudeMaxi;
 	
@@ -18,6 +18,8 @@ public abstract class ObjetVolantAbstrait {
 	
 	public ObjetVolantAbstrait() {
 		super();
+		this.altitude=0;
+		this.altitudeMaxi = DEFAULT_MAX_ALTITUDE;
 	}
 
 

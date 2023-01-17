@@ -18,8 +18,10 @@ public class MyApp {
 		ObjetVolantAbstrait objVolant = null;
 		//objVolant = new ObjetVolantAbstrait();//new direct interdit sur classe abstraite
 		objVolant = new Avion();
+		System.out.println( objVolant.toString());
 		System.out.println("avion qui décolle : " + objVolant.decoller());
 		objVolant = new Helicoptere();
+		System.out.println( objVolant.toString());
 		System.out.println("hélicoptere qui décolle : " + objVolant.decoller());
 	}
 	

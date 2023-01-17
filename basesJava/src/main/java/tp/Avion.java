@@ -15,4 +15,11 @@ public class Avion extends ObjetVolantAbstrait {
 		return "decoller sur une piste";
 	}
 
+	@Override
+	public String toString() {
+		return "Avion [" + super.toString() + "]";
+	}
+	
+	
+
 }

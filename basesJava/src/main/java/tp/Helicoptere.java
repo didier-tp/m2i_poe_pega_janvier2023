@@ -15,4 +15,10 @@ public class Helicoptere extends ObjetVolantAbstrait {
 		return "decolle verticalement via hélices";
 	}
 
+	@Override
+	public String toString() {
+		return "Helicoptere [" + super.toString() + "]";
+	}
+
+	
 }
