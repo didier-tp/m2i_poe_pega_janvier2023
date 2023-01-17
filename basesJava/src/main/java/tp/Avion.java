@@ -12,6 +12,7 @@ public class Avion extends ObjetVolantAbstrait {
 
 	@Override
 	public String decoller() {
+		this.setAltitude(500);
 		return "decoller sur une piste";
 	}
 

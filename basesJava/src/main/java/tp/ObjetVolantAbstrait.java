@@ -1,6 +1,6 @@
 package tp;
 
-public abstract class ObjetVolantAbstrait {
+public abstract class ObjetVolantAbstrait implements Volant{
 	
 	private Integer altitude;
 	private Integer altitudeMaxi;

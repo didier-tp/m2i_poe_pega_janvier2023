@@ -15,14 +15,23 @@ public class MyApp {
 	}
 	
 	public static void testObjetVolant() {
+		Volant choseVolanteQuelconque = null;
+		//choseVolanteQuelconque = new Volant();//new direct interdit sur classe interface
 		ObjetVolantAbstrait objVolant = null;
 		//objVolant = new ObjetVolantAbstrait();//new direct interdit sur classe abstraite
-		objVolant = new Avion();
+		objVolant = new Avion(); /*objVolant.setAltitude(500);*/
+		choseVolanteQuelconque = objVolant;
+		//choseVolanteQuelconque.decoller(); impossible car l'interface Volant ne comporte pas
+		//l'operation décoller()
 		System.out.println( objVolant.toString());
 		System.out.println("avion qui décolle : " + objVolant.decoller());
+		System.out.println("altitude chose volante: " + choseVolanteQuelconque.getAltitude());
 		objVolant = new Helicoptere();
 		System.out.println( objVolant.toString());
 		System.out.println("hélicoptere qui décolle : " + objVolant.decoller());
+		
+		choseVolanteQuelconque = new FeuilleVolante();
+		System.out.println("altitude chose volante: " + choseVolanteQuelconque.getAltitude());
 	}
 	
 	public static void testEmploye() {
