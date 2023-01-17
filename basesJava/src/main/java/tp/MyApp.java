@@ -5,26 +5,28 @@ public class MyApp {
 	public static void main(String[] args) {
 		//testTypeElementaire();
 		//testConversion();
-		//testCercle();
+		testCercle();
 		testPersonne();
 		//testAdresse();
 		//testString();
-		//testTableau();
+		testTableau();
 	}
+	
+	public static final int TAILLE_TAB = 6;
 	
 	public static void testTableau() {
 		 //tab doit être un tableau de 6 cases de type double
-		double[] tab = { 2.0 , 7 , 9 , 3 , 6 , 1 };
-		 /*
+		//double[] tab = { 2.0 , 7 , 9 , 3 , 6 , 1 };
+		
 		 double[] tab = null;
-		 tab = new double[6];
+		 tab = new double[TAILLE_TAB];
 		 tab[0]=2.0;
 		 tab[1]=7;
 		 tab[2]=9;
 		 tab[3]=3;
 		 tab[4]=6;
 		 tab[5]=1;
-		 */
+	
 		 //calculer et afficher la moyenne
 		 double somme = 0;
 		 for(int i=0;i<tab.length;i++) {
@@ -117,6 +119,9 @@ public class MyApp {
 		System.out.println("rayon de c2="+ c2.getRayon()); //V2 avec rayon private
 		//System.out.println("valeurs du c2=" + c2.toString());
 		System.out.println("valeurs du c2=" + c2); //avec appel implicite de .toString()
+		
+		double d  = Cercle.distanceEntreCentresDe2Cercles(c1, c2);
+		System.out.println("distance entre c1 et c2 = " + d);
 	}
 	
 	public static void testClasseEnveloppe() {
