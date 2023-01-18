@@ -1,4 +1,4 @@
-package tp;
+package tp.volant;
 //au sens "Chose Volante"
 public interface Volant {
    public Integer getAltitude() ;

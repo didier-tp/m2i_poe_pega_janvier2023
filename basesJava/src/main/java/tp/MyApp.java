@@ -1,5 +1,14 @@
 package tp;
 
+import tp.personnes.Adresse;
+import tp.personnes.Employe;
+import tp.personnes.Personne;
+import tp.volant.Avion;
+import tp.volant.FeuilleVolante;
+import tp.volant.Helicoptere;
+import tp.volant.ObjetVolantAbstrait;
+import tp.volant.Volant;
+
 public class MyApp {
 
 	public static void main(String[] args) {
@@ -11,7 +20,26 @@ public class MyApp {
 		//testAdresse();
 		//testString();
 		//testTableau();
-		testObjetVolant();
+		//testObjetVolant();
+		testTransportable();
+	}
+	
+	public static void testTransportable() {
+		Transportable choseTransportable =null;
+        Bagage b1=null,b2=null;
+        b1 = new Bagage ();
+        b1.setPoids(6.0);b1.setVolume(15.0);
+        System.out.println("b1 = "+b1.toString());
+        b2 = new Bagage(10.0,20.0);
+        System.out.println("b2 = "+b1.toString());
+        
+        Personne p1 = new Employe("jean","Aimare","jean.Aimare@DeTravailler.com",170,1,"passPass",2000.0);
+        System.out.println("p1 = "+p1.toString());
+        
+        choseTransportable=b1;
+        System.out.println("poids de chose transportable ="+choseTransportable.getPoids());
+        choseTransportable=p1;
+        System.out.println("poids de chose transportable ="+choseTransportable.getPoids());
 	}
 	
 	public static void testObjetVolant() {

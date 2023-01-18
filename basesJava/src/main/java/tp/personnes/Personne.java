@@ -1,6 +1,8 @@
-package tp;
+package tp.personnes;
 
-public class Personne /* extends Object */ {
+import tp.Transportable;
+
+public class Personne /* extends Object */ implements Transportable {
 	
 	private static double esperanceVie = 83.0;
 	private static int ageMajorite = 18;
@@ -9,6 +11,8 @@ public class Personne /* extends Object */ {
 	private String email;
 	private Integer taille; //null par défaut (0 par défaut si int plutôt que Integer)
     private Adresse adresse ; /* = new Adresse(); */
+    private final static double POIDS_MOYEN = 70.0;
+    private final static double VOLUME_MOYEN = 70.0;
     
     //A coder différemment sur la classe Employe qui hérite de Personne
     //redéfinition/override à faire
@@ -175,6 +179,18 @@ public class Personne /* extends Object */ {
 
 	public static void setAgeMajorite(int ageMajorite) {
 		Personne.ageMajorite = ageMajorite;
+	}
+
+
+	@Override
+	public double getPoids() {
+		return Personne.POIDS_MOYEN;
+	}
+
+
+	@Override
+	public double getVolume() {
+		return VOLUME_MOYEN;
 	}
 	
 	

@@ -1,4 +1,4 @@
-package tp;
+package tp.volant;
 
 public class Helicoptere extends ObjetVolantAbstrait {
 

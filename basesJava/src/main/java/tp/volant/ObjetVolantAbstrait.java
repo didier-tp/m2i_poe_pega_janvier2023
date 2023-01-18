@@ -1,4 +1,4 @@
-package tp;
+package tp.volant;
 
 public abstract class ObjetVolantAbstrait implements Volant{
 	
@@ -6,7 +6,7 @@ public abstract class ObjetVolantAbstrait implements Volant{
 	private Integer altitudeMaxi;
 	
 	public abstract String decoller();//opération sans code ici
-	     //qui devra basolument être codée sans les sous classes
+	     //qui devra absolument être codée sans les sous classes
 	
 	@Override
 	public String toString() {

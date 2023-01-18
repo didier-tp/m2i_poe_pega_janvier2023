@@ -1,4 +1,5 @@
-package tp;
+package tp.volant;
+
 //au sens "feuille volante qui tombe de l'arbre poussée par le vent"
 public class FeuilleVolante implements Volant {
 
