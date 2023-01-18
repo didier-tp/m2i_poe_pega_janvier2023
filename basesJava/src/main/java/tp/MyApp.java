@@ -14,17 +14,17 @@ import tp.volant.Volant;
 public class MyApp {
 
 	public static void main(String[] args) {
-		JOptionPane.showMessageDialog(null,"Bienvenue MyApp"); 
+		//JOptionPane.showMessageDialog(null,"Bienvenue MyApp"); 
 		//testTypeElementaire();
 		//testConversion();
 		//testCercle();
-		//testPersonne();
+		testPersonne();
 		//testEmploye();
 		//testAdresse();
 		//testString();
 		//testTableau();
 		//testObjetVolant();
-		testTransportable();
+		//testTransportable();
 	}
 	
 	public static void testTransportable() {
@@ -175,7 +175,13 @@ public class MyApp {
 		p2.setPrenom("axelle"); p2.setNom("Aire") ; p2.setEmail("axelle.Aire@xyz.com");
 		p2.setTaille(130); p2.grandir(6);
 		System.out.println("p2=" + p2);//.toString() implicite
-		p2.setTaille(-60);
+		try {
+			p2.setTaille(-60);
+		} catch (Exception e) {
+			e.printStackTrace();
+			//System.err.println(e.getMessage());
+			//JOptionPane.showMessageDialog(null, e.getMessage());
+		}
 		System.out.println("p2=" + p2);//.toString() implicite
 		
 		p2.setAdresse(new Adresse("3bis" , "rue xy" , "75001" , "Paris"));

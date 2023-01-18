@@ -9,13 +9,13 @@ public class Personne /* extends Object */ implements Transportable {
 	private String prenom;
 	private String nom;
 	private String email;
-	private Integer taille; //null par défaut (0 par défaut si int plutôt que Integer)
+	private Integer taille; //null par dï¿½faut (0 par dï¿½faut si int plutï¿½t que Integer)
     private Adresse adresse ; /* = new Adresse(); */
     private final static double POIDS_MOYEN = 70.0;
     private final static double VOLUME_MOYEN = 70.0;
     
-    //A coder différemment sur la classe Employe qui hérite de Personne
-    //redéfinition/override à faire
+    //A coder diffï¿½remment sur la classe Employe qui hï¿½rite de Personne
+    //redï¿½finition/override ï¿½ faire
     public String getAutorisations() {
     	return "EmprunterDesLivres,ConsulterCatalogue";
     }
@@ -144,9 +144,10 @@ public class Personne /* extends Object */ implements Transportable {
 	
 	public void setTaille(Integer taille) {
 		if(taille < 0) {
-			System.err.println("non mais ça va la tête, une personne ne peut pas avoir une taille négative");
-			System.err.println("this de la classe Personne refuse de changer sa taille dans ce cas de figure !");
-			return;//on arrête l'execution de la méthode avant la fin ordinaire
+			//System.err.println("non mais Ã§a va la tÃªte, une personne ne peut pas avoir une taille nÃ©gative");
+			//System.err.println("this de la classe Personne refuse de changer sa taille dans ce cas de figure !");
+			//return;//on arrÃ¨te l'execution de la mÃ©thode avant la fin ordinaire
+			throw new RuntimeException("taille nÃ©gative invalide");
 		}
 		this.taille = taille;
 	}
