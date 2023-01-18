@@ -1,5 +1,7 @@
 package tp;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class MyApp2 {
@@ -7,7 +9,21 @@ public class MyApp2 {
 
 	public static void main(String[] args) {
 		//testException();
-		testException2();
+		//testException2();
+		testCollection();
+	}
+	
+	public static void testCollection() {
+		List<String> liste = new ArrayList<>();
+		liste.add("janvier");
+		liste.add("fevrier");
+		liste.add("mars");
+		int n = liste.size();
+		System.out.println("n="+n);
+		for(int i=0;i<n;i++) {
+			Object obj = liste.get(i);
+			System.out.println("obj="+obj);
+		}
 	}
 	
 	public static void testException2() {
