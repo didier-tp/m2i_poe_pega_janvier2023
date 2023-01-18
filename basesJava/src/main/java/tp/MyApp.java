@@ -1,5 +1,7 @@
 package tp;
 
+import javax.swing.JOptionPane;
+
 import tp.personnes.Adresse;
 import tp.personnes.Employe;
 import tp.personnes.Personne;
@@ -12,6 +14,7 @@ import tp.volant.Volant;
 public class MyApp {
 
 	public static void main(String[] args) {
+		JOptionPane.showMessageDialog(null,"Bienvenue MyApp"); 
 		//testTypeElementaire();
 		//testConversion();
 		//testCercle();
@@ -50,13 +53,13 @@ public class MyApp {
 		objVolant = new Avion(); /*objVolant.setAltitude(500);*/
 		choseVolanteQuelconque = objVolant;
 		//choseVolanteQuelconque.decoller(); impossible car l'interface Volant ne comporte pas
-		//l'operation décoller()
+		//l'operation dï¿½coller()
 		System.out.println( objVolant.toString());
-		System.out.println("avion qui décolle : " + objVolant.decoller());
+		System.out.println("avion qui dï¿½colle : " + objVolant.decoller());
 		System.out.println("altitude chose volante: " + choseVolanteQuelconque.getAltitude());
 		objVolant = new Helicoptere();
 		System.out.println( objVolant.toString());
-		System.out.println("hélicoptere qui décolle : " + objVolant.decoller());
+		System.out.println("hï¿½licoptere qui dï¿½colle : " + objVolant.decoller());
 		
 		choseVolanteQuelconque = new FeuilleVolante();
 		System.out.println("altitude chose volante: " + choseVolanteQuelconque.getAltitude());
@@ -65,11 +68,11 @@ public class MyApp {
 	public static void testEmploye() {
 		Employe e1=null;
 		e1=new Employe();
-		e1.setPrenom("jean");e1.setNom("Bon"); //appels des méthodes héritées
+		e1.setPrenom("jean");e1.setNom("Bon"); //appels des mï¿½thodes hï¿½ritï¿½es
 		e1.setTaille(160); e1.setEmail("jean.Bon@iciOuLa.fr");
-		e1.setSalaire(2500.0); //appel d'une méthode spécifique aux employés
+		e1.setSalaire(2500.0); //appel d'une mï¿½thode spï¿½cifique aux employï¿½s
 		e1.setMotDePasse("motDePasse"); e1.setNumeroEmploye(1);
-		System.out.println("e1="+e1.toString()); //appel d'une méthode redéfinie sur classe Employe
+		System.out.println("e1="+e1.toString()); //appel d'une mï¿½thode redï¿½finie sur classe Employe
 		
 		Employe e2=new Employe("jean","Aimare","jean.Aimare@DeTravailler.com",170,2,"passPass",2000.0);
 		System.out.println("e2="+e2.toString());
@@ -99,7 +102,7 @@ public class MyApp {
 	public static final int TAILLE_TAB = 6;
 	
 	public static void testTableau() {
-		 //tab doit être un tableau de 6 cases de type double
+		 //tab doit ï¿½tre un tableau de 6 cases de type double
 		//double[] tab = { 2.0 , 7 , 9 , 3 , 6 , 1 };
 		
 		 double[] tab = null;
@@ -158,14 +161,14 @@ public class MyApp {
 	    p1.grandir(5);
 		p1Bis=new Personne("alex","Therieur","alex.therieur@xyz.com",120);
 	    p1Bis.grandir(5);
-		System.out.println("p1=" + p1);//.toString() appelé implicitement
+		System.out.println("p1=" + p1);//.toString() appelï¿½ implicitement
 		System.out.println("p1Bis=" + p1Bis);
 		if(p1.equals(p1Bis)) {
-			//NB: pour avoir le bon comportement, la méthode .equals() doit êtte codée
+			//NB: pour avoir le bon comportement, la mï¿½thode .equals() doit ï¿½tte codï¿½e
 			//sur la classe Personne (via assistant source/generate hashCode and equals
-			System.out.println("les objets p1 et p1Bis ont mêmes valeurs ");
+			System.out.println("les objets p1 et p1Bis ont mï¿½mes valeurs ");
 		}else{
-			System.out.println("les objets p1 et p1Bis n'ont mêmes valeurs ");
+			System.out.println("les objets p1 et p1Bis n'ont mï¿½mes valeurs ");
 		}
 		p2=new Personne();
 		System.out.println("p2=" + p2);//.toString() implicite
@@ -179,13 +182,13 @@ public class MyApp {
 		p2.getAdresse().setCodePostal("75002");
 		System.out.println("adresse de p2=" + p2.getAdresse());
 		
-		System.out.println("espérance de vie moyenne des Personnes en france=" 
+		System.out.println("espï¿½rance de vie moyenne des Personnes en france=" 
 		                   + Personne.getEsperanceVie());
 		Personne.setEsperanceVie(84.2);
-		System.out.println("nouvelle espérance de vie moyenne des Personnes en france=" 
+		System.out.println("nouvelle espï¿½rance de vie moyenne des Personnes en france=" 
                             + Personne.getEsperanceVie());
 		
-		System.out.println("age majorité en france=" + Personne.getAgeMajorite());
+		System.out.println("age majoritï¿½ en france=" + Personne.getAgeMajorite());
 	}
 	
 	public static void testCercle() {
@@ -193,7 +196,7 @@ public class MyApp {
 		c1 = new Cercle();
 		//c1.rayon = 100; c1.xc = 50; c1.yc = 50; //V1 avec xc,yc,rayon public
 		c1.setRayon(100); c1.setXc(50); c1.setYc(50);
-		c1.setRayon(-70); //on demande au cercle c1 de modifier son rayon à -70
+		c1.setRayon(-70); //on demande au cercle c1 de modifier son rayon ï¿½ -70
 		                  //mais l'objet c1 refuse la valeur invalide dans .setRayon()
 		System.out.println("valeurs du c1=" + c1.toString());
 		System.out.println("perimetre de c1="+ c1.perimetre());
@@ -212,16 +215,16 @@ public class MyApp {
 		int age1 = 25;
 		//age1 = null; //null = valeur impossible sur int
 		Integer age2 ;
-		age2=25; //equivalent à écrire age2 = new Integer(25);
-		age2=26; //équivalent à écrire age2 = new Integer(26);
-		age2 = null; //null = valeur possible (et quelquefois par défaut) d'un Integer
-		//la valeur null est pratique (et utile) : ça provient d'un null SQL 
-		//ou d'une zone de saisie laissée à vide.
+		age2=25; //equivalent ï¿½ ï¿½crire age2 = new Integer(25);
+		age2=26; //ï¿½quivalent ï¿½ ï¿½crire age2 = new Integer(26);
+		age2 = null; //null = valeur possible (et quelquefois par dï¿½faut) d'un Integer
+		//la valeur null est pratique (et utile) : ï¿½a provient d'un null SQL 
+		//ou d'une zone de saisie laissï¿½e ï¿½ vide.
 	}
 	
 	
 	public static void testConversion() {
-		String sA="5"; //sA est de type String (souvent après une saisie au clavier dans formulaire HTML)
+		String sA="5"; //sA est de type String (souvent aprï¿½s une saisie au clavier dans formulaire HTML)
 		int a = Integer.parseInt(sA);
 		String sB="6"; 
 		int b = Integer.parseInt(sB);
@@ -235,10 +238,10 @@ public class MyApp {
 		y = x / b ; 
 		System.out.println("y=x/b="+ y); 
 		
-		//déclarer les variables z1 et z2 de type double.
-		//convertir "2.6" en numérique et stocker ça dans z1;
-		//convertir la valeur 2 en double et stocker ça dans z2
-		//afficher le résultat de la multiplication de z1 par z2
+		//dï¿½clarer les variables z1 et z2 de type double.
+		//convertir "2.6" en numï¿½rique et stocker ï¿½a dans z1;
+		//convertir la valeur 2 en double et stocker ï¿½a dans z2
+		//afficher le rï¿½sultat de la multiplication de z1 par z2
 		double z1,z2;
 		z1=Double.parseDouble("2.6");
 		z2 = (double) 2; //ou bien z2 = 2;
