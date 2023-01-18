@@ -142,7 +142,7 @@ public class Personne /* extends Object */ implements Transportable {
 
 
 	
-	public void setTaille(Integer taille) {
+	public void setTaille(Integer taille) throws RuntimeException {
 		if(taille < 0) {
 			//System.err.println("non mais ça va la tête, une personne ne peut pas avoir une taille négative");
 			//System.err.println("this de la classe Personne refuse de changer sa taille dans ce cas de figure !");

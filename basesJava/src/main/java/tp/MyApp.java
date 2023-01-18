@@ -173,8 +173,10 @@ public class MyApp {
 		p2=new Personne();
 		System.out.println("p2=" + p2);//.toString() implicite
 		p2.setPrenom("axelle"); p2.setNom("Aire") ; p2.setEmail("axelle.Aire@xyz.com");
+		
 		p2.setTaille(130); p2.grandir(6);
 		System.out.println("p2=" + p2);//.toString() implicite
+	
 		try {
 			p2.setTaille(-60);
 		} catch (Exception e) {
