@@ -1,9 +1,11 @@
 package tp.volant;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import tp.Transportable;
+import tp.personnes.ComparateurDePersonne;
 import tp.personnes.Personne;
 
 public class Avion extends ObjetVolantAbstrait {
@@ -28,6 +30,10 @@ public class Avion extends ObjetVolantAbstrait {
 		//avec du code qui parcours les personnes de l'avion
 		//et qui les affiche
 		System.out.println("personnes montées dans l'avion:");
+		
+		ComparateurDePersonne comparateurDePersonne = new ComparateurDePersonne();
+		
+		Collections.sort(listePersonnes,comparateurDePersonne);
 		for(Personne p : listePersonnes) {
 			System.out.println("\t" + p); //"\t" pour tabulation , "\n" pour saut de ligne
 		}

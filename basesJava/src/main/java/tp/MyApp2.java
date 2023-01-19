@@ -1,6 +1,7 @@
 package tp;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -17,7 +18,7 @@ public class MyApp2 {
 		//testException2();
 		//testCollection();
 		//testCollection2();
-		testCollection3();
+		//testCollection3();
 		testAvion();
 	}
 	
@@ -38,9 +39,11 @@ public class MyApp2 {
 		List<Double> listeNumerique = new ArrayList<>();
 		
 		//ajouter quelques valeurs
+		listeNumerique.add(12.0);
 		listeNumerique.add(4.0);
 		listeNumerique.add(8.0);
-		listeNumerique.add(12.0);
+		
+		Collections.sort(listeNumerique);
 		
 		//parcours la liste avec for() au sens forEach
 		//à chaque itération , on affiche la valeur et le carré de la valeur
