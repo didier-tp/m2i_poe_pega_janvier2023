@@ -36,6 +36,11 @@ public class MyApp2 {
 			String valeur = (String)it.next();
 			System.out.println("valeur="+valeur);
 		}
+		
+		//parcours moderne avec boucle for() au sens forEach():
+		for(String sVal : liste) {
+			System.out.println("sVal="+sVal);
+		}
 	}
 	
 	public static void testException2() {
