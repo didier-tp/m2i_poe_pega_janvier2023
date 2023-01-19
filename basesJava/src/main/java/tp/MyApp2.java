@@ -5,6 +5,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+import tp.personnes.Employe;
+import tp.personnes.Personne;
+
 public class MyApp2 {
 
 
@@ -12,7 +15,8 @@ public class MyApp2 {
 		//testException();
 		//testException2();
 		//testCollection();
-		testCollection2();
+		//testCollection2();
+		testCollection3();
 	}
 	
 	public static void testCollection2() {
@@ -28,6 +32,29 @@ public class MyApp2 {
 		//à chaque itération , on affiche la valeur et le carré de la valeur
 		for(Double val : listeNumerique) {
 			System.out.println("le carre de " + val + " vaut " + val*val);
+		}
+		
+		listeNumerique.remove(8.0);
+		System.out.println("apres suppression de l'élément 8.0 ");
+		System.out.println("taille de la liste = " + listeNumerique.size());
+		for(Double val : listeNumerique) {
+			System.out.println("le carre de " + val + " vaut " + val*val);
+		}
+	}
+	
+	public static void testCollection3() {
+		//créer une liste de références sur des Personne (ou des cas particulier : Employe)
+		List<Personne> listePersonnes = new ArrayList<>();
+		
+		//ajouter quelques personnes
+		listePersonnes.add(new Personne());
+		listePersonnes.add(new Personne("didier","Defrance","didier@d-defrance.fr",182));
+		listePersonnes.add(new Employe());
+		
+		//parcours la liste avec for() au sens forEach
+		//à chaque itération , on affiche la valeur et le carré de la valeur
+		for(Personne pers : listePersonnes) {
+			System.out.println("pers=" + pers); //pers.toString()
 		}
 	}
 	
