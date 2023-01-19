@@ -1,8 +1,12 @@
 package tp.volant;
 
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,6 +30,31 @@ public class Avion extends ObjetVolantAbstrait {
 	
 	public void ajouterAffaireOuBagage(Transportable t) {
 		listeAffairesOuBagages.add(t);
+	}
+	
+    public void recharger() {
+    	try {
+			FileInputStream fis = new FileInputStream("avion.txt");
+			InputStreamReader isr = new InputStreamReader(fis);
+			BufferedReader br = new BufferedReader(isr);
+			String ligne = br.readLine(); //première ligne lue = titre des colonnes CSV
+			do {
+				ligne = br.readLine(); //ligne de données (ou null si fin de fichier)
+				//System.out.println("ligne="+ligne);
+				if(ligne!=null) {
+					String[] partiesLigne = ligne.split(",");
+					Personne p = new Personne();
+					p.setPrenom(partiesLigne[0]);
+					p.setNom(partiesLigne[1]);
+					p.setEmail(partiesLigne[2]);
+					p.setTaille(Integer.parseInt(partiesLigne[3]));
+					this.listePersonnes.add(p);
+				}
+			}while(ligne!=null);
+			br.close();isr.close();fis.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void sauvegarder() {
@@ -91,6 +120,8 @@ public class Avion extends ObjetVolantAbstrait {
 	public void setListePersonnes(List<Personne> listePersonnes) {
 		this.listePersonnes = listePersonnes;
 	}
+
+	
 	
 	
 

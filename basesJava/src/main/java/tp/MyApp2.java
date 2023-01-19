@@ -23,7 +23,8 @@ public class MyApp2 {
 		//testCollection();
 		//testCollection2();
 		//testCollection3();
-		testAvion();
+		//testAvion();
+		testRelectureAvion();
 		//testMap();
 		//testDate();
 	}
@@ -59,6 +60,12 @@ public class MyApp2 {
 	   a1.ajouterAffaireOuBagage(new Personne("carlos","Goshn","cg@renault.com",165));//poidsmoyen=70
 	   a1.afficher();
 	   a1.sauvegarder(); //+refresh sur projet eclipse pour voir le fichier généré avion.txt
+	}
+	
+	public static void testRelectureAvion() {
+		Avion a1Relu = new Avion();
+		a1Relu.recharger(); //depuis le fichier avion.txt
+		a1Relu.afficher();
 	}
 	
 	public static void testCollection2() {
