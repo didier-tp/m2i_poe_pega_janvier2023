@@ -29,6 +29,7 @@ public class MyApp2 {
 	   a1.ajouterPersonne(new Personne("axelle","Aire","aa@xy.com",167));
 	   a1.ajouterAffaireOuBagage(new Bagage(10.0,20.0));//10kg, 20 litres
 	   a1.ajouterAffaireOuBagage(new Bagage(5.0,15.0));//5kg, 15 litres
+	   a1.ajouterAffaireOuBagage(new Personne("carlos","Goshn","cg@renault.com",165));//poidsmoyen=70
 	   a1.afficher();
 	}
 	
