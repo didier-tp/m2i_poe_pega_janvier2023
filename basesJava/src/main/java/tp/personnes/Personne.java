@@ -20,6 +20,9 @@ public class Personne /* extends Object */ implements Transportable {
     	return "EmprunterDesLivres,ConsulterCatalogue";
     }
 	
+    public String toCsvString() {
+    	return prenom+","+nom+","+email+","+taille;
+    }
 	
 	@Override
 	public String toString() {

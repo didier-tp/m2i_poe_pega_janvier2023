@@ -1,6 +1,6 @@
 package tp.volant;
 
-import java.io.FileNotFoundException;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -32,8 +32,10 @@ public class Avion extends ObjetVolantAbstrait {
 		try {
 			FileOutputStream fos = new FileOutputStream("avion.txt");
 			PrintStream ps = new PrintStream(fos);
+			ps.println("prenom,nom,email,taille");
 			for(Personne p : listePersonnes) {
-				ps.println( p); 
+				//ps.println( p.toString()) //ps.println( p); 
+				ps.println( p.toCsvString());
 			}
 			ps.close();
 			fos.close();
