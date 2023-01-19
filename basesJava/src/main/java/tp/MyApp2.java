@@ -11,7 +11,24 @@ public class MyApp2 {
 	public static void main(String[] args) {
 		//testException();
 		//testException2();
-		testCollection();
+		//testCollection();
+		testCollection2();
+	}
+	
+	public static void testCollection2() {
+		//créer une liste de Integer ou Double
+		List<Double> listeNumerique = new ArrayList<>();
+		
+		//ajouter quelques valeurs
+		listeNumerique.add(4.0);
+		listeNumerique.add(8.0);
+		listeNumerique.add(12.0);
+		
+		//parcours la liste avec for() au sens forEach
+		//à chaque itération , on affiche la valeur et le carré de la valeur
+		for(Double val : listeNumerique) {
+			System.out.println("le carre de " + val + " vaut " + val*val);
+		}
 	}
 	
 	public static void testCollection() {
