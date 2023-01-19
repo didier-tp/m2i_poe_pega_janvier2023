@@ -23,7 +23,7 @@ public class MyApp2 {
 		//testCollection();
 		//testCollection2();
 		//testCollection3();
-		//testAvion();
+		testAvion();
 		testRelectureAvion();
 		//testMap();
 		//testDate();
@@ -54,7 +54,7 @@ public class MyApp2 {
 	   a1.ajouterPersonne(new Employe("hotesse","Principale","hp@xy.com",163,2,"motPasse",2500.0));
 	   a1.ajouterPersonne(new Personne("jean","Bon","jb@xy.com",177));
 	   a1.ajouterPersonne(new Personne("axelle","Aire","aa@xy.com",167));
-	   //a1.ajouterPersonne(new Personne());
+	   a1.ajouterPersonne(new Personne());
 	   a1.ajouterAffaireOuBagage(new Bagage(10.0,20.0));//10kg, 20 litres
 	   a1.ajouterAffaireOuBagage(new Bagage(5.0,15.0));//5kg, 15 litres
 	   a1.ajouterAffaireOuBagage(new Personne("carlos","Goshn","cg@renault.com",165));//poidsmoyen=70

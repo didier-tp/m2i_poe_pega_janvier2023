@@ -47,7 +47,8 @@ public class Avion extends ObjetVolantAbstrait {
 					p.setPrenom(partiesLigne[0]);
 					p.setNom(partiesLigne[1]);
 					p.setEmail(partiesLigne[2]);
-					p.setTaille(Integer.parseInt(partiesLigne[3]));
+					if("null".equals(partiesLigne[3])) p.setTaille(null);
+					else p.setTaille(Integer.parseInt(partiesLigne[3]));
 					this.listePersonnes.add(p);
 				}
 			}while(ligne!=null);
