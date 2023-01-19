@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import tp.personnes.Employe;
 import tp.personnes.Personne;
+import tp.volant.Avion;
 
 public class MyApp2 {
 
@@ -17,6 +18,18 @@ public class MyApp2 {
 		//testCollection();
 		//testCollection2();
 		testCollection3();
+		testAvion();
+	}
+	
+	public static void testAvion() {
+	   Avion a1 = new Avion();
+	   a1.ajouterPersonne(new Employe("pilote","Emerite","pe@xy.com",177,1,"motPasseSecret",3500.0));
+	   a1.ajouterPersonne(new Employe("hotesse","Principale","hp@xy.com",163,2,"motPasse",2500.0));
+	   a1.ajouterPersonne(new Personne("jean","Bon","jb@xy.com",177));
+	   a1.ajouterPersonne(new Personne("axelle","Aire","aa@xy.com",167));
+	   a1.ajouterAffaireOuBagage(new Bagage(10.0,20.0));//10kg, 20 litres
+	   a1.ajouterAffaireOuBagage(new Bagage(5.0,15.0));//5kg, 15 litres
+	   a1.afficher();
 	}
 	
 	public static void testCollection2() {
