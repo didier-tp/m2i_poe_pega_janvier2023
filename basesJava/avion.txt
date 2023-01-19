@@ -1,0 +1,4 @@
+Personne [prenom=axelle, nom=Aire, email=aa@xy.com, taille=167]
+Personne [prenom=jean, nom=Bon, email=jb@xy.com, taille=177]
+Employe [numeroEmploye=1,type=RESPONSABLE, motDePasse=motPasseSecret, salaire=3500.0, partie heritee de Personne=Personne [prenom=pilote, nom=Emerite, email=pe@xy.com, taille=177]]
+Employe [numeroEmploye=2,type=BIBLIOTHECAIRE, motDePasse=motPasse, salaire=2500.0, partie heritee de Personne=Personne [prenom=hotesse, nom=Principale, email=hp@xy.com, taille=163]]

@@ -1,7 +1,9 @@
 package tp;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -23,6 +25,14 @@ public class MyApp2 {
 		//testCollection3();
 		testAvion();
 		//testMap();
+		//testDate();
+	}
+	
+	public static void testDate() {
+		//SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		String sdate = simpleDateFormat.format(new Date());
+        System.out.println(sdate);
 	}
 	
 	public static void testMap() {
@@ -48,6 +58,7 @@ public class MyApp2 {
 	   a1.ajouterAffaireOuBagage(new Bagage(5.0,15.0));//5kg, 15 litres
 	   a1.ajouterAffaireOuBagage(new Personne("carlos","Goshn","cg@renault.com",165));//poidsmoyen=70
 	   a1.afficher();
+	   a1.sauvegarder(); //+refresh sur projet eclipse pour voir le fichier généré avion.txt
 	}
 	
 	public static void testCollection2() {
@@ -71,7 +82,8 @@ public class MyApp2 {
 		System.out.println("apres suppression de l'élément 8.0 ");
 		System.out.println("taille de la liste = " + listeNumerique.size());
 		for(Double val : listeNumerique) {
-			System.out.println("le carre de " + val + " vaut " + val*val);
+			//System.out.println("le carre de " + val + " vaut " + val*val);
+			System.out.printf("le carre de %.2f  vaut %.2f\n" ,val,val*val);
 		}
 	}
 	
