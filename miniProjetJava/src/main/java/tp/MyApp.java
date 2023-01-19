@@ -14,8 +14,8 @@ public class MyApp {
 
 	public static void main(String[] args) {
 		System.out.println("cette application va générer un fichier dessin.svg ou dessin2.svg");
-		//premiersTests();
-		enchainerTransformationsEtGenerationFichierSvg();
+		premiersTests();
+		//enchainerTransformationsEtGenerationFichierSvg();
 	}
 	
 	public static List<Figure2D> buildListeFigures() {
