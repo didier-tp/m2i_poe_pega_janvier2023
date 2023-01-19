@@ -1,14 +1,18 @@
 package tp.personnes;
 
 public class Employe extends Personne{
+	
+	public enum TypeEmploye { BIBLIOTHECAIRE , RESPONSABLE }
+	private TypeEmploye type = TypeEmploye.BIBLIOTHECAIRE; //+get/set
+	
     private Integer numeroEmploye = null;
     private String motDePasse;
     private Double salaire;
     
 
-    //redéfinir la fonction toString en rappelant en interne 
-    //la version codée sur super classe Personne et en 
-    //ajoutant par concaténation les valeurs des attributs supplémentaires
+    //redï¿½finir la fonction toString en rappelant en interne 
+    //la version codï¿½e sur super classe Personne et en 
+    //ajoutant par concatï¿½nation les valeurs des attributs supplï¿½mentaires
     /*
     public String toString() {
     	String persString  = super.toString();
@@ -18,14 +22,14 @@ public class Employe extends Personne{
     
     @Override
 	public String toString() {
-		return "Employe [numeroEmploye=" + numeroEmploye + ", motDePasse=" + motDePasse + ", salaire=" + salaire
+		return "Employe [numeroEmploye=" + numeroEmploye + ",type="+ type + ", motDePasse=" + motDePasse + ", salaire=" + salaire
 				+ ", partie heritee de Personne=" + super.toString() + "]";
 	}
     
   
     
     
-    //constructeurs : 1 avec zéro paramétre
+    //constructeurs : 1 avec zï¿½ro paramï¿½tre
     //et d'autres (ex: Employe(String prenom, String nom, String email, Integer taille,
     //                         Integer numeroEmploye ,String motDePasse, Double salaire  )
     
@@ -77,4 +81,13 @@ public class Employe extends Personne{
 	public void setSalaire(Double salaire) {
 		this.salaire = salaire;
 	}
+
+	public TypeEmploye getType() {
+		return type;
+	}
+
+	public void setType(TypeEmploye type) {
+		this.type = type;
+	}
+	
 }
