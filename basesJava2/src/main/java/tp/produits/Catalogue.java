@@ -33,6 +33,7 @@ public class Catalogue {
 	}
     
     public void afficherProduits(double prixMini,double prixMaxi){
+    	/*
     	List<Produit> listeProduitsFiltresEtTries = 
     	this.listeProduits.stream()
     	.filter( (Produit p)-> (p.getPrix() >= prixMini && p.getPrix() <= prixMaxi) )
@@ -42,6 +43,13 @@ public class Catalogue {
     	for(Produit p :  listeProduitsFiltresEtTries) {
 			System.out.println(p);//p.toString()
 		}
+    	*/
+    	
+    	this.listeProduits.stream()
+    	 .filter( (Produit p)-> (p.getPrix() >= prixMini && p.getPrix() <= prixMaxi) )
+    	 .sorted((Produit p1,Produit p2)->{ return Double.compare(p1.getPrix(), p2.getPrix());})
+    	 .forEach((Produit p) -> System.out.println(p));
+    	    	
 	}
     
     public double calculerMoyennePrixDesProduits(){

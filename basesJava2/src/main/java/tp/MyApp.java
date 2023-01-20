@@ -13,8 +13,8 @@ public class MyApp {
 		Catalogue c = new Catalogue();
 		c.lireFichier("produits.csv");
 		//c.lireFichier("produits2.csv");
-		//c.afficherProduits();
-		c.afficherProduits(3,5.5); //entre prixMini et prixMaxi
+		c.afficherProduits();
+		//c.afficherProduits(3,5.5); //entre prixMini et prixMaxi
 		//calculer la moyenne (et éventuellement écart_type) des prix des produits
 		System.out.println("moyennePrixDesProduits="+c.calculerMoyennePrixDesProduits());
 		
