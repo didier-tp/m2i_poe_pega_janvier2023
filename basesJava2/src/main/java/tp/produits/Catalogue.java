@@ -3,8 +3,10 @@ package tp.produits;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,6 +31,16 @@ public class Catalogue {
 		}
     	double moyenne = sommePrix / listeProduits.size();
     	return moyenne;
+    }
+    
+    public void ecrireFichierStat(String fileName) {
+    	try {
+			PrintStream ps = new PrintStream(new FileOutputStream(fileName));
+			ps.println("moyennePrixDesProduits="+ this.calculerMoyennePrixDesProduits());
+			ps.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 
 	public void lireFichier(String fileName) {

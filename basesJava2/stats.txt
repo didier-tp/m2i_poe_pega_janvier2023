@@ -1,0 +1,1 @@
+moyennePrixDesProduits=4.225

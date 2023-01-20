@@ -14,12 +14,12 @@ public class MyApp {
 		c.lireFichier("produits.csv");
 		//c.lireFichier("produits2.csv");
 		c.afficherProduits();
-		System.out.println("moyennePrixDesProduits="+c.calculerMoyennePrixDesProduits());
 		//calculer la moyenne (et éventuellement écart_type) des prix des produits
+		System.out.println("moyennePrixDesProduits="+c.calculerMoyennePrixDesProduits());
 		
-		
+	
 		//générer un fichier stats.txt avec la moyenne calculée
-		
+		c.ecrireFichierStat("stats.txt");//refresh eclipse pour voir le fichier généré
 	}
 
 }
