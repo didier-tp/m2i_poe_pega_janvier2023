@@ -2,6 +2,7 @@ package tp.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -61,8 +62,21 @@ public class DaoEleveJdbc implements DaoEleve{
 
 	@Override
 	public void saveEleve(Eleve e) {
-		// TODO Auto-generated method stub
-		
+		try {
+			Connection cn = this.etablirConnection();
+			String reqSql = "INSERT INTO eleve(num_eleve,nom,prenom,num_classe) VALUES(?,?,?,?)";
+			PreparedStatement pst = cn.prepareStatement(reqSql);
+			pst.setInt(1, e.getNum_eleve());
+			pst.setString(2, e.getNom());
+			pst.setString(3, e.getPrenom());
+			pst.setInt(4, e.getNum_classe());
+			int nbLignes  = pst.executeUpdate();
+			System.out.println("nbLignes inserees = " + nbLignes);
+			pst.close();
+			cn.close();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
 	}
 
 	@Override
