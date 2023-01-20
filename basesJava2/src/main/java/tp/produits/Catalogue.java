@@ -20,6 +20,16 @@ public class Catalogue {
 			System.out.println(p);//p.toString()
 		}
 	}
+    
+    public double calculerMoyennePrixDesProduits(){
+    	double sommePrix=0;
+    	for(Produit p :  listeProduits) {
+    		//sommePrix=sommePrix+p.getPrix();
+    		sommePrix += p.getPrix();
+		}
+    	double moyenne = sommePrix / listeProduits.size();
+    	return moyenne;
+    }
 
 	public void lireFichier(String fileName) {
 		try {
