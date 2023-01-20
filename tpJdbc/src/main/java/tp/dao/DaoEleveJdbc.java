@@ -5,7 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLType;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +50,7 @@ public class DaoEleveJdbc implements DaoEleve{
 				e.setNum_eleve(rs.getInt("num_eleve"));
 				e.setNom(rs.getString("nom"));
 				e.setPrenom(rs.getString("prenom"));
-				e.setNum_classe(rs.getInt("nnum_classe"));
+				e.setNum_classe(rs.getInt("num_classe"));
 				listeEleves.add(e);
 			}
 			rs.close();
@@ -59,18 +61,31 @@ public class DaoEleveJdbc implements DaoEleve{
 		}
 		return listeEleves;
 	}
+	
+	Integer recupValeurAutoIncrPk(PreparedStatement pst){
+		Integer pk=null;
+		try {
+			ResultSet rsKeys = pst.getGeneratedKeys();
+			if(rsKeys.next()){ pk= rsKeys.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+        return pk;
+	}
 
 	@Override
 	public void saveEleve(Eleve e) {
 		try {
 			Connection cn = this.etablirConnection();
-			String reqSql = "INSERT INTO eleve(num_eleve,nom,prenom,num_classe) VALUES(?,?,?,?)";
-			PreparedStatement pst = cn.prepareStatement(reqSql);
-			pst.setInt(1, e.getNum_eleve());
-			pst.setString(2, e.getNom());
-			pst.setString(3, e.getPrenom());
-			pst.setInt(4, e.getNum_classe());
+			String reqSql = "INSERT INTO eleve(nom,prenom,num_classe) VALUES(?,?,?)";
+			PreparedStatement pst = cn.prepareStatement(reqSql,Statement.RETURN_GENERATED_KEYS );
+			pst.setString(1, e.getNom());
+			pst.setString(2, e.getPrenom());
+			pst.setInt(3, e.getNum_classe());
 			int nbLignes  = pst.executeUpdate();
+			Integer pkNumEleve = recupValeurAutoIncrPk(pst);
+			e.setNum_eleve(pkNumEleve);
 			System.out.println("nbLignes inserees = " + nbLignes);
 			pst.close();
 			cn.close();
