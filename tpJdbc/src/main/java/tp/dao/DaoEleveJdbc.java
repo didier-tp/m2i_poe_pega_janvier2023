@@ -1,0 +1,65 @@
+package tp.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.List;
+
+import tp.entity.Eleve;
+
+/*
+ * la classe DaoEleveJdbc code les méthodes de l'interface DaoEleve avec la techno JDBC
+ * la classe DaoEleveJpa code les méthodes de l'interface DaoEleve avec la techno Jpa
+ */
+
+public class DaoEleveJdbc implements DaoEleve{
+	
+	
+	private Connection etablirConnection() {
+		Connection cn=null;
+		try {
+			Class.forName("org.postgresql.Driver");
+			String url = "jdbc:postgresql://localhost:5432/enseignement";
+			String username="postgres"; //"root" ou "postgres" ou "admin" ou "sa"
+			String password="root"; // "" ou "postgres" ou "...."
+			cn = DriverManager.getConnection(url, username, password);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return cn;
+	}
+	
+	@Override
+	public List<Eleve> findAllEleve() {
+		Connection cn = this.etablirConnection();
+		return null;
+	}
+
+	@Override
+	public void saveEleve(Eleve e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Eleve findEleveByNum(int num) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+	@Override
+	public void updateEleve(Eleve e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteEleve(int num) {
+		// TODO Auto-generated method stub
+		
+	}
+}
