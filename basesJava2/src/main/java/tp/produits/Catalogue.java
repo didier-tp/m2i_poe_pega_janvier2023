@@ -8,9 +8,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Catalogue {
 	
@@ -18,7 +20,26 @@ public class Catalogue {
 	//private Map<String,List<Produit>> mapProduits = new HashMap<>();
 	
     public void afficherProduits(){
-		for(Produit p :  listeProduits) {
+    	
+    	Collections.sort(listeProduits,
+    	(Produit p1,Produit p2)->{ return Double.compare(p1.getPrix(), p2.getPrix());} 
+    	/* (p1,p2)-> Double.compare(p1.getPrix(), p2.getPrix()) */
+    	 /*  (Produit p1,Produit p2)->{ return p1.getLabel().compareTo(p2.getLabel());}	*/
+    	);
+		
+    	for(Produit p :  listeProduits) {
+			System.out.println(p);//p.toString()
+		}
+	}
+    
+    public void afficherProduits(double prixMini,double prixMaxi){
+    	List<Produit> listeProduitsFiltresEtTries = 
+    	this.listeProduits.stream()
+    	.filter( (Produit p)-> (p.getPrix() >= prixMini && p.getPrix() <= prixMaxi) )
+    	.sorted((Produit p1,Produit p2)->{ return Double.compare(p1.getPrix(), p2.getPrix());})
+    	.collect(Collectors.toList());
+    	
+    	for(Produit p :  listeProduitsFiltresEtTries) {
 			System.out.println(p);//p.toString()
 		}
 	}
