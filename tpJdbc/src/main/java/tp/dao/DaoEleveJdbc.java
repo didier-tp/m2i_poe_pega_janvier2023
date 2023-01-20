@@ -2,7 +2,10 @@ package tp.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import tp.entity.Eleve;
@@ -33,8 +36,27 @@ public class DaoEleveJdbc implements DaoEleve{
 	
 	@Override
 	public List<Eleve> findAllEleve() {
-		Connection cn = this.etablirConnection();
-		return null;
+		List<Eleve> listeEleves = new ArrayList<>();
+		try {
+			Connection cn = this.etablirConnection();
+			Statement st = cn.createStatement();
+			String reqSql = "SELECT * FROM eleve";
+			ResultSet rs = st.executeQuery(reqSql);
+			while(rs.next()) {
+				Eleve e = new Eleve();
+				e.setNum_eleve(rs.getInt("num_eleve"));
+				e.setNom(rs.getString("nom"));
+				e.setPrenom(rs.getString("prenom"));
+				e.setNum_classe(rs.getInt("nnum_classe"));
+				listeEleves.add(e);
+			}
+			rs.close();
+			st.close();
+			cn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return listeEleves;
 	}
 
 	@Override
